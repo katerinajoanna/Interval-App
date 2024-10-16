@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--color-app);
+    background-image: radial-gradient(circle, #0b0b4d, #36368f);
+    color: var(--color-text);
+    /* overflow: hidden; */
+}
+
+.loading {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    h1 {
+        font-size: 40px;
+        padding: 5px;
+        letter-spacing: 3px;
+    }
+
+    p {
+        font-size: 24px;
+        padding: 5px;
+        letter-spacing: 2px;
+    }
+}
+
+.nav img {
+    width: 80px;
+    aspect-ratio: 1;
+    transform: rotate(90deg);
+}
