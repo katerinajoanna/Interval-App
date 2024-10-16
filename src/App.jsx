@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Loading />} />
-        <Route path="/SetTimer" element={<SetTimer />} />
+        <Route path="/set-timer" element={<SetTimer />} />
       </Routes>
     </Router>
   )

@@ -20,7 +20,7 @@ function Loading() {
             duration: 400,
             easing: 'easeInOutQuad',
             complete: () => {
-                navigate('/SetTimer');
+                navigate('/set-timer');
             }
         });
     }
