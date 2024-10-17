@@ -3,9 +3,11 @@ import Btn from '../../components/button/Btn';
 import vectorLeft from '../../assets/vectorLeft.svg';
 import vectorRigth from '../../assets/vectorRigth.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function SetTimer() {
     const [minutes, setMinutes] = useState(0);
+    const navigate = useNavigate();
 
     const incrementMinutes = () => {
         if (minutes < 99) {
@@ -19,6 +21,9 @@ function SetTimer() {
         }
     };
 
+    const startTimer = () => {
+        navigate('/timer', { state: { minutes } });
+    }
 
     return (
         <div className="set-timer">
@@ -47,7 +52,7 @@ function SetTimer() {
                 </div>
             </section>
             <div className="set-btn">
-                < Btn text="START TIMER" />
+                < Btn text="START TIMER" onClick={startTimer} />
             </div>
         </div>
     )
