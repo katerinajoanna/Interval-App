@@ -24,29 +24,27 @@ function TextTimer() {
         }
     };
 
-
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
     return (
-        <div>
-            <div className="text">
-                <section className="text-nav">
-                    <img src={navicon} alt="nav icon" onClick={toggleMenu} />
-                    <p>interval</p>
-                </section>
-                <section className="text-timer">
-                    <p>SJU MINUTER</p>
-                    <p> OCH TRETTIOTVÅ </p>
-                    <p> SEKUNDER KVAR</p>
-                </section>
-                <section className="text-btn">
-                    < Btn text="ABORT TIMER" onClick={abortTimer} />
-                </section>
-                {/* Renderuj menu, jeśli isMenuOpen jest true */}
-                {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} />}
-            </div>
+
+        <div className="visual">
+            <section className="visual-nav">
+                <img src={navicon} alt="nav icon" onClick={toggleMenu} />
+                <p>interval</p>
+            </section>
+            <section className="visual-timer">
+                <p>SJU MINUTER</p>
+                <p> OCH TRETTIOTVÅ </p>
+                <p> SEKUNDER KVAR</p>
+            </section>
+            <section className="visual-btn">
+                < Btn text="ABORT TIMER" onClick={abortTimer} />
+            </section>
+            {/* Renderuj menu, jeśli isMenuOpen jest true */}
+            {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} />}
         </div>
     )
 };

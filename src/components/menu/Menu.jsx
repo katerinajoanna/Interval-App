@@ -17,7 +17,7 @@ function Menu({ onSelect }) {
             opacity: 1,
             x: 0,
             transition: {
-                delay: i * 0.2,
+                delay: i * 0.2 + 0.2,
                 duration: 0.4
             },
         }),
