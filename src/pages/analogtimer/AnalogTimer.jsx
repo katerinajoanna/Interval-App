@@ -1,4 +1,4 @@
-import './analogTimet.css';
+import './analogTimer.css';
 
 function AnalogTimer() {
     return (
