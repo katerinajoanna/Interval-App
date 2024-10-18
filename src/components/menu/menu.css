@@ -1,3 +1,12 @@
+.img {
+    position: absolute;
+    top: 1.3rem;
+    left: 1.3rem;
+    width: 45px;
+    aspect-ratio: 1;
+}
+
+
 .menu {
     position: fixed;
     /* tar hela sidan */
