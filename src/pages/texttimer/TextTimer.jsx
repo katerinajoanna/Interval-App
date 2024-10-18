@@ -1,9 +1,52 @@
+import { useState } from 'react';
 import './textTimer.css';
+import navicon from '../../assets/navicon.svg';
+import { useNavigate } from 'react-router-dom';
+import Menu from '../../components/menu/Menu';
+import Btn from '../../components/button/Btn';
 
 function TextTimer() {
+    const navigate = useNavigate();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const abortTimer = () => {
+        navigate('/set-timer');
+    };
+
+    const handleMenuSelect = (option) => {
+        setIsMenuOpen(false);
+        if (option === 'digital') {
+            navigate('/timer');
+        } else if (option === 'analog') {
+            navigate('/analog-timer');
+        } else if (option === 'visual') {
+            navigate('/visual-timer');
+        }
+    };
+
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <div>
-
+            <div className="text">
+                <section className="text-nav">
+                    <img src={navicon} alt="nav icon" onClick={toggleMenu} />
+                    <p>interval</p>
+                </section>
+                <section className="text-timer">
+                    <p>SJU MINUTER</p>
+                    <p> OCH TRETTIOTVÅ </p>
+                    <p> SEKUNDER KVAR</p>
+                </section>
+                <section className="text-btn">
+                    < Btn text="ABORT TIMER" onClick={abortTimer} />
+                </section>
+                {/* Renderuj menu, jeśli isMenuOpen jest true */}
+                {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} />}
+            </div>
         </div>
     )
 };
