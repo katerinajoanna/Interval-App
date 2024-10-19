@@ -76,7 +76,7 @@ body {
     }
 
     to {
-        transform: translateX(-50%) rotate(360%);
+        transform: translateX(-50%) rotate(360deg);
     }
 }
 
