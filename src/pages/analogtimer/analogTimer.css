@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.analog {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-app);
+    background-image: radial-gradient(circle, #0d404e, #158bac);
+    /* background-color: #1a4b43; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.analog-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.analog-nav p {
+    font-size: 2rem;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 3rem;
+}
+
+.analog-nav img {
+    margin-left: 1.3rem;
+    width: 45px;
+    aspect-ratio: 1;
+}
+
+.analog-timer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex-grow: 1;
+}
+
+.analog-img {
+    width: 279px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.hand {
+    position: absolute;
+    width: 2px;
+    background-color: white;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: center bottom;
+    transform: translateX(-50%) rotate(0deg);
+    /* start rotate*/
+}
+
+.minute-hand {
+    height: 100px;
+    animation: rotateMinute 3600s linear infinite;
+}
+
+@keyframes rotateMinute {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360%);
+    }
+}
+
+.second-hand {
+    height: 120px;
+    background-color: red;
+    animation: rotateSecond 60s linear infinite;
+}
+
+@keyframes rotateSecond {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.analog-btn {
+    position: absolute;
+    bottom: 3.2rem;
+}
+
+.analog-btn .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: var(--color-text);
+    border: 1px solid var(--btn-text);
+    box-shadow: 3px 3px 8px var(--box-shadow)
+}
