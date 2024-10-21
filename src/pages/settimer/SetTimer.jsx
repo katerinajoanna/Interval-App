@@ -22,8 +22,14 @@ function SetTimer() {
     };
 
     const startTimer = () => {
-        navigate('/digital-timer', { state: { minutes } });
-    }
+        if (minutes === 0) {
+            alert("Välj en tid som är längre än 0 minuter!");
+            return;
+        }
+
+        const timeInSeconds = minutes * 60;
+        navigate('/digital-timer', { state: { time: timeInSeconds } });
+    };
 
     return (
         <div className="set-timer">

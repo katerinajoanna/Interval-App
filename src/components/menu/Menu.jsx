@@ -91,4 +91,4 @@ function Menu({ onSelect }) {
     )
 };
 
-export default Menu
+export default Menu;
