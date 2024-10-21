@@ -16,7 +16,7 @@ function DigitalTimer() {
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);  //stänger menu
         if (option === 'digital') {
-            navigate('/timer');
+            navigate('/digital-timer');
         } else if (option === 'analog') {
             navigate('/analog-timer');
         } else if (option === 'visual') {

@@ -22,7 +22,7 @@ function SetTimer() {
     };
 
     const startTimer = () => {
-        navigate('/timer', { state: { minutes } });
+        navigate('/digital-timer', { state: { minutes } });
     }
 
     return (

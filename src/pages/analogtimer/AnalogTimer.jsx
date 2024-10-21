@@ -17,7 +17,7 @@ function AnalogTimer() {
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);
         if (option === 'digital') {
-            navigate('/timer');
+            navigate('/digital-timer');
         } else if (option === 'analog') {
             navigate('/analog-timer');
         } else if (option === 'visual') {

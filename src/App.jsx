@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Loading />} />
         <Route path="/set-timer" element={<SetTimer />} />
-        <Route path="/timer" element={<DigitalTimer />} />
+        <Route path="/digital-timer" element={<DigitalTimer />} />
         <Route path="/analog-timer" element={<AnalogTimer />} />
         <Route path="/visual-timer" element={<TextTimer />} />
       </Routes>
