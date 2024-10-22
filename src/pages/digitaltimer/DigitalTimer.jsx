@@ -40,7 +40,7 @@ function DigitalTimer() {
             <section className="digital-btn">
                 <Btn text="ABORT TIMER" onClick={abortTimer} />
             </section>
-            {isMenuOpen && <Menu onSelect={handleMenuSelect} />}
+            {isMenuOpen && <Menu onSelect={handleMenuSelect} setIsMenuOpen={setIsMenuOpen} />}
         </div>
     )
 };

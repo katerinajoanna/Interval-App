@@ -3,7 +3,7 @@ import './menu.css';
 import { motion } from 'framer-motion';
 import navicon from '../../assets/navicon.svg';
 
-function Menu({ onSelect }) {
+function Menu({ onSelect, setIsMenuOpen }) {
 
     const [isIconClicked, setIsIconClicked] = useState();
 
@@ -44,11 +44,13 @@ function Menu({ onSelect }) {
                 ease: 'linear',
             },
         },
-
     };
 
+    //funktion för hantera option
     const handleSelect = (option) => {
+        console.log('Selected option:', option);
         onSelect(option);
+        setIsMenuOpen(false);
     };
 
     // function för icon
@@ -59,7 +61,6 @@ function Menu({ onSelect }) {
             setIsIconClicked(false);
         }, 400);    // ms för att sluta animation
     };
-
 
     return (
         <div className='menu'>

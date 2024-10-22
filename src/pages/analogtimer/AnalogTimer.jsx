@@ -46,7 +46,7 @@ function AnalogTimer() {
                 < Btn text="ABORT TIMER" onClick={abortTimer} />
             </section>
 
-            {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} />}
+            {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} setIsMenuOpen={setIsMenuOpen} />}
         </div>
     )
 };

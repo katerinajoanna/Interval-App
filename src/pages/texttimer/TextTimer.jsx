@@ -44,7 +44,7 @@ function TextTimer() {
                 < Btn text="ABORT TIMER" onClick={abortTimer} />
             </section>
             {/* Renderuj menu, jeśli isMenuOpen jest true */}
-            {isMenuOpen && <Menu onSelect={handleMenuSelect} toggleMenu={toggleMenu} />}
+            {isMenuOpen && <Menu onSelect={handleMenuSelect} setIsMenuOpen={setIsMenuOpen} />}
         </div>
     )
 };
