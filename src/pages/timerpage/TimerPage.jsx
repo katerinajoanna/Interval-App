@@ -17,10 +17,10 @@ function TimerPage({ time }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     useEffect(() => {
-        console.log(time);
+        console.log('time:', time);
         timer.start({
             countdown: true,
-            startValue: {
+            startValues: {
                 seconds: time
             }
         });

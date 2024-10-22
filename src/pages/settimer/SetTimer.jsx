@@ -3,11 +3,12 @@ import Btn from '../../components/button/Btn';
 import vectorLeft from '../../assets/vectorLeft.svg';
 import vectorRigth from '../../assets/vectorRigth.svg';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-function SetTimer() {
+function SetTimer({setTime}) {
     const [minutes, setMinutes] = useState(0);
     const navigate = useNavigate();
+
 
     const incrementMinutes = () => {
         if (minutes < 99) {
@@ -26,9 +27,13 @@ function SetTimer() {
             alert("Välj en tid som är längre än 0 minuter!");
             return;
         }
-
+        console.log(minutes);
+        console.log(typeof minutes);
         const timeInSeconds = minutes * 60;
-        navigate('/digital-timer', { state: { time: timeInSeconds } });
+        console.log(timeInSeconds);
+        setTime(timeInSeconds);
+        // navigate('/digital-timer', { state: { timeState: timeInSeconds } });
+        navigate('/timer');
     };
 
     return (

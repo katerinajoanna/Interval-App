@@ -1,13 +1,19 @@
 import './digitalTimer.css';
 import navicon from '../../assets/navicon.svg';
 import Btn from '../../components/button/Btn';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Menu from '../../components/menu/Menu';
+import Timer from 'easytimer.js';
 
-function DigitalTimer() {
+function DigitalTimer({timeLeft}) {
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [time, setTime] = useState("");
+
+    useEffect(() => {
+        
+    }, []);
 
     const abortTimer = () => {
         navigate('/set-timer');
@@ -35,7 +41,7 @@ function DigitalTimer() {
                 <p>interval</p>
             </section>
             <section className="digital-timer">
-                <p>00:00</p>
+                <p>{timeLeft}</p>
             </section>
             <section className="digital-btn">
                 <Btn text="ABORT TIMER" onClick={abortTimer} />

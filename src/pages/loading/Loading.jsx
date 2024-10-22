@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './loading.css';
 import navicon from '../../assets/navicon.svg';
-import anime from 'animejs';
+import anime from 'animejs/lib/anime.es.js';
 
 function Loading() {
     const navigate = useNavigate();
