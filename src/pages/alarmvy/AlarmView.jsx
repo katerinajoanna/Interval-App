@@ -2,8 +2,8 @@ import './alarmView.css';
 
 function AlarmView() {
     return (
-        <div>
-
+        <div className='alarm'>
+            <p>Times up!</p>
         </div>
     )
 };

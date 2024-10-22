@@ -1,8 +1,10 @@
+
 import Timer from 'easytimer.js';
 import Menu from '../../components/menu/Menu';
 import DigitalTimer from '../digitaltimer/DigitalTimer';
 import AnalogTimer from '../analogtimer/AnalogTimer';
 import TextTimer from '../texttimer/TextTimer';
+//import AlarmView from '../alarmvy/AlarmView';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -58,7 +60,7 @@ function TimerPage({ time }) {
                 <Menu onSelect={handleMenuSelect} setIsMenuOpen={setIsMenuOpen} />
             )}
 
-            {/* visar lämlig timer */}
+            {/* visar lämplig timer */}
             {displayDigital && <DigitalTimer timeLeft={timeLeft} />}
             {displayAnalog && <AnalogTimer timeLeft={timeLeft} />}
             {displayText && <TextTimer timeLeft={timeLeft} />}

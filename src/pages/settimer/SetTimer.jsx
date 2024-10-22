@@ -3,9 +3,9 @@ import Btn from '../../components/button/Btn';
 import vectorLeft from '../../assets/vectorLeft.svg';
 import vectorRigth from '../../assets/vectorRigth.svg';
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function SetTimer({setTime}) {
+function SetTimer({ setTime }) {
     const [minutes, setMinutes] = useState(0);
     const navigate = useNavigate();
 
