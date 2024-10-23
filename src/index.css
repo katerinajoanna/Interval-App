@@ -18,3 +18,11 @@ body {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1.4px;
 }
+
+.display-timer {
+    opacity: 1;
+}
+
+.hide-timer {
+    opacity: 0;
+}

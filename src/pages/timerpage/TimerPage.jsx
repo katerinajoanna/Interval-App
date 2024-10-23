@@ -48,6 +48,7 @@ function TimerPage({ time }) {
 
     const handleMenuSelect = (option) => {
         console.log('setIsMenuOpen:', setIsMenuOpen);
+        console.log('option', option);
         setDisplayDigital(option === 'digital');
         setDisplayAnalog(option === 'analog');
         setDisplayText(option === 'visual');
@@ -62,9 +63,12 @@ function TimerPage({ time }) {
             )}
 
             {/* visar lämplig timer */}
-            {displayDigital && <DigitalTimer timeLeft={timeLeft} />}
+            <DigitalTimer display={ displayDigital } timeLeft={timeLeft} />
+            <AnalogTimer display={ displayAnalog } timeLeft={timeLeft} />
+            <TextTimer display={displayText} timeLeft={timeLeft} />
+            {/* {displayDigital && <DigitalTimer timeLeft={timeLeft} />}
             {displayAnalog && <AnalogTimer timeLeft={timeLeft} />}
-            {displayText && <TextTimer timeLeft={timeLeft} />}
+            {displayText && <TextTimer timeLeft={timeLeft} />} */}
         </div>
 
     )

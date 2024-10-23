@@ -6,7 +6,7 @@ import Menu from '../../components/menu/Menu';
 import Btn from '../../components/button/Btn';
 import minutes from '../../assets/minutes.svg';
 
-function AnalogTimer() {
+function AnalogTimer({display, timeLeft}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -16,13 +16,13 @@ function AnalogTimer() {
 
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);
-        if (option === 'digital') {
-            navigate('/digital-timer');
-        } else if (option === 'analog') {
-            navigate('/analog-timer');
-        } else if (option === 'visual') {
-            navigate('/visual-timer');
-        }
+        // if (option === 'digital') {
+        //     navigate('/digital-timer');
+        // } else if (option === 'analog') {
+        //     navigate('/analog-timer');
+        // } else if (option === 'visual') {
+        //     navigate('/visual-timer');
+        // }
     };
 
     const toggleMenu = () => {
@@ -30,7 +30,7 @@ function AnalogTimer() {
     };
 
     return (
-        <div className='analog'>
+        <div className={display ? 'analog display-timer': 'analog hide-timer'}>
             <section className="analog-nav">
                 <img src={navicon} alt="nav icon" onClick={toggleMenu} />
                 <p>interval</p>
