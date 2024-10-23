@@ -32,10 +32,11 @@ function TimerPage({ time }) {
         };
 
         const targetAchievedHandler = () => {
+            console.log('Timer finished, navigating to /alarm');
             navigate('/alarm');
         };
 
-
+        timer.addEventListener('targetAchieved', targetAchievedHandler);
         timer.addEventListener('secondsUpdated', secondsUpdatedHandler);
 
         return () => {
