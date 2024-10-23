@@ -6,14 +6,44 @@ body {
 .alarm {
     width: 100vw;
     height: 100vh;
-    background-color: red;
-    background-image: radial-gradient(circle, #330f0f #d71515);
+    background: linear-gradient(to bottom right, #330f0f, #d71515);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
     text-align: center;
+}
+
+.alarm-rings {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle, rgba(255, 0, 0, 0.6), rgba(255, 0, 0, 0));
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrowanie */
+    animation: expand 2s infinite;
+    /* Animacja rozszerzania */
+}
+
+@keyframes expand {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
 }
 
 .alarm-icon {

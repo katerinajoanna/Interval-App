@@ -6,11 +6,37 @@ body {
 .digital {
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(270deg, #0b0b4d, #36368f);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    animation: backgroundAnimation 3s infinite;
+}
+
+@keyframes backgroundAnimation {
+
+    0% {
+        background: linear-gradient(270deg, #0b0b4d, #36368f);
+    }
+
+    25% {
+        background: linear-gradient(270deg, #1818a8, #0c0c4f);
+    }
+
+    50% {
+        background: linear-gradient(270deg, #368f7a, #051d22);
+    }
+
+    75% {
+        background: linear-gradient(270deg, #0c0c4f, #1818a8);
+    }
+
+    100% {
+        background: linear-gradient(270deg, #0b0b4d, #36368f);
+    }
 }
 
 .digital-nav {
