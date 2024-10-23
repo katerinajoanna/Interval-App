@@ -4,9 +4,11 @@ import vectorLeft from '../../assets/vectorLeft.svg';
 import vectorRigth from '../../assets/vectorRigth.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion'
 
 function SetTimer({ setTime }) {
     const [minutes, setMinutes] = useState(0);
+    const [isClicked, setIsClicked] = useState(false);
     const navigate = useNavigate();
 
 
@@ -32,20 +34,40 @@ function SetTimer({ setTime }) {
         const timeInSeconds = minutes * 60;
         console.log(timeInSeconds);
         setTime(timeInSeconds);
-        // navigate('/digital-timer', { state: { timeState: timeInSeconds } });
-        navigate('/timer');
+
+        setIsClicked(true);
+
+        setTimeout(() => {
+            navigate('/timer');
+        }, 500);
     };
 
     return (
         <div className="set-timer">
             <section className="set-time">
-                <figure className="vector-left" onClick={decrementMinutes}>
+                <motion.figure
+                    className="vector-left"
+                    onClick={decrementMinutes}
+                    whileTap={{
+                        scale: 1.6,
+                        rotate: -20
+                    }}
+                    transition={{ duration: 0.2 }}
+                >
                     <img src={vectorLeft} alt="vector left" />
-                </figure>
+                </motion.figure>
                 <h1>{minutes.toString().padStart(2, '0')}</h1>   {/*vissar minuter i format 00 */}
-                <figure className="vector-rigth" onClick={incrementMinutes}>
+                <motion.figure
+                    className="vector-rigth"
+                    onClick={incrementMinutes}
+                    whileTap={{
+                        scale: 1.6,
+                        rotate: -20
+                    }}
+                    transition={{ duration: 0.2 }}
+                >
                     <img src={vectorRigth} alt="vector rigth" />
-                </figure>
+                </motion.figure>
             </section>
             <p>minutes</p>
             <section className="box">
@@ -62,12 +84,22 @@ function SetTimer({ setTime }) {
                     </label>
                 </div>
             </section>
-            <div className="set-btn">
-                < Btn text="START TIMER" onClick={startTimer} />
-            </div>
+
+            <motion.div
+                className="set-btn"
+                initial={{ y: 0, scale: 1, backgroundColor: 'rgba(255, 255, 255, 0)' }}
+                animate={isClicked
+                    ? { y: 100, opacity: 0, scale: 0.3, backgroundColor: 'rgb(0, 255, 0)' }
+                    : { y: 0, opacity: 1, backgroundColor: 'rgba(255, 255, 255, 0)' }}
+
+                transition={{
+                    duration: 0.5
+                }}
+            >
+                <Btn text="START TIMER" onClick={startTimer} />
+            </motion.div>
         </div>
     )
 };
 
 export default SetTimer;
-
