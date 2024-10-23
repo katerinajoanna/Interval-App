@@ -24,7 +24,7 @@ function SetTimer({ setTime }) {
 
     const startTimer = () => {
         if (minutes === 0) {
-            alert("Välj en tid som är längre än 0 minuter!");
+            //alert("Välj en tid som är längre än 0 minuter!");
             return;
         }
         console.log(minutes);

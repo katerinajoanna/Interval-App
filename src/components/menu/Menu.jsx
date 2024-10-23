@@ -5,7 +5,7 @@ import navicon from '../../assets/navicon.svg';
 
 function Menu({ onSelect, setIsMenuOpen }) {
 
-    const [isIconClicked, setIsIconClicked] = useState();
+    const [isIconClicked, setIsIconClicked] = useState(false);
 
     // definera animation för elem.
     const menuItemVariants = {

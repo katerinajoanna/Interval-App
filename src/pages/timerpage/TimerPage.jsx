@@ -46,14 +46,38 @@ function TimerPage({ time }) {
         };
     }, [navigate, time]);
 
+    // const handleMenuSelect = (option) => {
+    //     console.log('setIsMenuOpen:', setIsMenuOpen);
+    //     console.log('option', option);
+    //     setDisplayDigital(option === 'digital');
+    //     setDisplayAnalog(option === 'analog');
+    //     setDisplayText(option === 'visual');
+    //     setIsMenuOpen(false);
+    // };
+
+
+
     const handleMenuSelect = (option) => {
         console.log('setIsMenuOpen:', setIsMenuOpen);
-        console.log('option', option);
-        setDisplayDigital(option === 'digital');
-        setDisplayAnalog(option === 'analog');
-        setDisplayText(option === 'visual');
+
+        if (option === 'digital') {
+            setDisplayDigital(true);
+            setDisplayAnalog(false);
+            setDisplayText(false);
+        } else if (option === 'analog') {
+            setDisplayDigital(false);
+            setDisplayAnalog(true);
+            setDisplayText(false);
+        } else if (option === 'visual') {
+            setDisplayDigital(false);
+            setDisplayAnalog(false);
+            setDisplayText(true);
+        }
+
         setIsMenuOpen(false);
     };
+
+
 
     return (
         <div>
@@ -63,8 +87,8 @@ function TimerPage({ time }) {
             )}
 
             {/* visar lämplig timer */}
-            <DigitalTimer display={ displayDigital } timeLeft={timeLeft} />
-            <AnalogTimer display={ displayAnalog } timeLeft={timeLeft} />
+            <DigitalTimer display={displayDigital} timeLeft={timeLeft} />
+            <AnalogTimer display={displayAnalog} timeLeft={timeLeft} />
             <TextTimer display={displayText} timeLeft={timeLeft} />
             {/* {displayDigital && <DigitalTimer timeLeft={timeLeft} />}
             {displayAnalog && <AnalogTimer timeLeft={timeLeft} />}

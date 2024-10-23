@@ -1,18 +1,18 @@
 import './digitalTimer.css';
 import navicon from '../../assets/navicon.svg';
 import Btn from '../../components/button/Btn';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Menu from '../../components/menu/Menu';
-import Timer from 'easytimer.js';
+//import Timer from 'easytimer.js';
 
-function DigitalTimer({display, timeLeft}) {
+function DigitalTimer({ display, timeLeft }) {
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [time, setTime] = useState("");
+    //const [time, setTime] = useState("");
 
     useEffect(() => {
-        
+
     }, []);
 
     const abortTimer = () => {
@@ -21,6 +21,9 @@ function DigitalTimer({display, timeLeft}) {
 
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);  //stänger menu
+        if (option === 'digital') {
+            navigate('/timer')
+        }
         // if (option === 'digital') {
         //     navigate('/digital-timer');
         // } else if (option === 'analog') {
@@ -35,7 +38,7 @@ function DigitalTimer({display, timeLeft}) {
     };
 
     return (
-        <div className={display ? 'digital display-timer': 'digital hide-timer'}>
+        <div className={display ? 'digital display-timer' : 'digital hide-timer'}>
             <section className="digital-nav">
                 <img src={navicon} alt="nav icon" onClick={toggleMenu} />
                 <p>interval</p>
