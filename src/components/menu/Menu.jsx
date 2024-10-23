@@ -49,7 +49,7 @@ function Menu({ onSelect, setIsMenuOpen }) {
     //funktion för hantera option
     const handleSelect = (option) => {
         console.log('Selected option:', option);
-        onSelect(option);
+        onSelect(option); // Här ligger problemet! Denna anropas aldrig
         setIsMenuOpen(false);
     };
 

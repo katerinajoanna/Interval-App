@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Menu from '../../components/menu/Menu';
 import Timer from 'easytimer.js';
 
-function DigitalTimer({timeLeft}) {
+function DigitalTimer({display, timeLeft}) {
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [time, setTime] = useState("");
@@ -21,13 +21,13 @@ function DigitalTimer({timeLeft}) {
 
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);  //stänger menu
-        if (option === 'digital') {
-            navigate('/digital-timer');
-        } else if (option === 'analog') {
-            navigate('/analog-timer');
-        } else if (option === 'visual') {
-            navigate('/visual-timer');
-        }
+        // if (option === 'digital') {
+        //     navigate('/digital-timer');
+        // } else if (option === 'analog') {
+        //     navigate('/analog-timer');
+        // } else if (option === 'visual') {
+        //     navigate('/visual-timer');
+        // }
     };
 
     const toggleMenu = () => {
@@ -35,7 +35,7 @@ function DigitalTimer({timeLeft}) {
     };
 
     return (
-        <div className='digital'>
+        <div className={display ? 'digital display-timer': 'digital hide-timer'}>
             <section className="digital-nav">
                 <img src={navicon} alt="nav icon" onClick={toggleMenu} />
                 <p>interval</p>

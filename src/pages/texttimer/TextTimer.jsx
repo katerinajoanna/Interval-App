@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Menu from '../../components/menu/Menu';
 import Btn from '../../components/button/Btn';
 
-function TextTimer() {
+function TextTimer({display, timeLeft}) {
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -15,13 +15,13 @@ function TextTimer() {
 
     const handleMenuSelect = (option) => {
         setIsMenuOpen(false);
-        if (option === 'digital') {
-            navigate('/digital-timer');
-        } else if (option === 'analog') {
-            navigate('/analog-timer');
-        } else if (option === 'visual') {
-            navigate('/visual-timer');
-        }
+        // if (option === 'digital') {
+        //     navigate('/digital-timer');
+        // } else if (option === 'analog') {
+        //     navigate('/analog-timer');
+        // } else if (option === 'visual') {
+        //     navigate('/visual-timer');
+        // }
     };
 
     const toggleMenu = () => {
@@ -30,7 +30,7 @@ function TextTimer() {
 
     return (
 
-        <div className="visual">
+        <div className={display ? 'visual display-timer': 'visual hide-timer'}>
             <section className="visual-nav">
                 <img src={navicon} alt="nav icon" onClick={toggleMenu} />
                 <p>interval</p>
