@@ -27,4 +27,37 @@
 .menu h1 {
     margin: 30px 0;
     font-size: 2rem;
+    animation: menuAnimate 1s ease-in-out;
+}
+
+@keyframes menuAnimate {
+    0% {
+        font-size: 2rem;
+        color: #1d61c8;
+        filter: blur(1px);
+    }
+
+    20% {
+        font-size: 2rem;
+        color: #2ca7b3;
+        filter: blur(1px);
+    }
+
+    50% {
+        font-size: 3rem;
+        color: #0f883d;
+        filter: blur(3px);
+    }
+
+    60%,
+    95% {
+        font-size: 2.5rem;
+        color: #0f883d;
+        filter: blur(1.3px);
+    }
+
+    100% {
+        font-size: 2rem;
+        color: rgb(31, 64, 116);
+    }
 }
