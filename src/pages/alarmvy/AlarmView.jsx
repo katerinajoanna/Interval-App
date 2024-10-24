@@ -3,6 +3,7 @@ import alarm from '../../assets/alarm icon.svg';
 import Btn from '../../components/button/Btn';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import anime from 'animejs';
 
 function AlarmView() {
     const [nuTimer, setNuTimer] = useState(0);
@@ -11,7 +12,17 @@ function AlarmView() {
     const handleSetNuTimer = () => {
         setNuTimer(prevTimer => prevTimer + 1);
         console.log(`New timer set: ${nuTimer + 1}`);
-        navigate('/set-timer');
+
+        anime({
+            targets: '.alarm-btn',
+            scale: [1, 2, 0.1],
+            duration: 900,
+            easing: 'easeInOutQuad',
+            opacity: [1, 1, 0],
+            complete: () => {
+                navigate('/set-timer');
+            }
+        });
     };
 
     return (
