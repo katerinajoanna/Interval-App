@@ -18,6 +18,10 @@ function AlarmView() {
         <>
             <div className='alarm'>
                 <div className="alarm-rings"></div>
+                <div className="alarm-rings"></div>
+                <div className="alarm-rings"></div>
+                <div className="alarm-rings"></div>
+                <div className="alarm-rings"></div>
                 <section className="alarm-icon">
                     <img src={alarm} alt="alarm icon" />
                     <p>Times up!</p>
